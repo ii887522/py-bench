@@ -1,0 +1,14 @@
+{
+  "name": "py-bench",
+  "version": "0.1.0",
+  "description": "A collection of use cases with different strategies and performance comparison between them to find out the best and worst practices for a specific problem.",
+  "scripts": {
+    "format": "prettier --write \"**/*.{md,json,yml}\" --ignore-path .gitignore",
+    "check-fmt": "prettier --check \"**/*.{md,json,yml}\" --ignore-path .gitignore"
+  },
+  "author": "ii887522",
+  "license": "MIT",
+  "devDependencies": {
+    "prettier": "^2.8.8"
+  }
+}

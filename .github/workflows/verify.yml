@@ -1,0 +1,51 @@
+name: Verify
+
+on:
+  pull_request_target:
+    branches:
+      - develop
+      - master
+
+jobs:
+  prettier-fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install the dependencies
+        run: npm ci
+      - name: Check formatting
+        run: npm run check-fmt
+  black-fmt:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Use Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - name: Install the dependencies
+        run: pip install -r requirements.txt
+      - name: Check formatting
+        run: black --check --verbose .
+  isort:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the repository
+        uses: actions/checkout@v3
+      - name: Use Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+          cache: 'pip'
+      - name: Check sorting and formatting
+        uses: isort/isort-action@v1
+        with:
+          requirements-files: 'requirements.txt'

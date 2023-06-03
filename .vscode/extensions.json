@@ -1,0 +1,18 @@
+{
+  "recommendations": [
+    "esbenp.prettier-vscode",
+    "editorconfig.editorconfig",
+    "wayou.vscode-todo-highlight",
+    "mhutchie.git-graph",
+    "eamodio.gitlens",
+    "wix.vscode-import-cost",
+    "visualstudioexptteam.vscodeintellicode",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "yzhang.markdown-all-in-one",
+    "vscode-icons-team.vscode-icons",
+    "github.vscode-github-actions",
+    "ms-python.isort",
+    "ms-python.black-formatter"
+  ],
+  "unwantedRecommendations": ["hookyqr.beautify"]
+}
